@@ -70,7 +70,7 @@ export const site = {
   },
 
   links: {
-    github: 'https://github.com/fullstack-dev1125',
+    github: 'https://github.com/soriano-kimrussel',
   },
 } as const;
 
@@ -478,10 +478,43 @@ export type Project = {
 };
 
 /**
- * Projects from my original portfolio (kimrussel.vercel.app), with their
+ * The first four are live apps; screenshots were captured from their demos.
+ * The rest are from my original portfolio (kimrussel.vercel.app), with their
  * original titles, tags and screenshots. Descriptions only restate those tags.
  */
 export const projects: Project[] = [
+  {
+    title: 'FlowPilot',
+    category: 'Web apps',
+    body: 'A multi-tenant SaaS that automates the lead lifecycle: it captures and scores leads, drafts follow-ups with an LLM, routes each lead to its owner and reports on results. Runs at zero cost, with a pluggable AI layer.',
+    stack: ['Next.js', 'Multi-tenant SaaS', 'LLM integration', 'Lead scoring'],
+    href: 'https://flowpilot-topaz.vercel.app/',
+    image: { src: '/work/flowpilot.webp', alt: 'FlowPilot landing page beside a lead qualification pipeline with each step marked complete', width: 800, height: 500 },
+  },
+  {
+    title: 'Momentum',
+    category: 'Web apps',
+    body: 'A zero-cost, local-first mobile app for personal growth, covering everything from daily habit tracking to monetization and admin, with no live backend services needed to run it.',
+    stack: ['React Native', 'Expo', 'Local-first', 'Mobile app'],
+    href: 'https://monentum.vercel.app',
+    image: { src: '/work/momentum.webp', alt: 'Momentum Today screen with a daily greeting, three habits with streaks and a mood check-in', width: 800, height: 500 },
+  },
+  {
+    title: 'Vaultmarket',
+    category: 'Web apps',
+    body: 'A marketplace demo that puts a full Supabase feature set behind an NDA gate, showing how the platform’s building blocks fit together in a real application.',
+    stack: ['Next.js', 'Supabase', 'Postgres', 'Row-level security'],
+    href: 'https://vaultmarket-eta.vercel.app',
+    image: { src: '/work/vaultmarket.webp', alt: 'Vaultmarket home page reading “The deal room where secrets unlock on signature” above listing cards', width: 800, height: 500 },
+  },
+  {
+    title: 'Weather-Aware Truck Routing',
+    category: 'Web apps',
+    body: 'A route-planning tool for trucks that factors forecast weather into each route, built solo with a clear split between the React front end and the Django backend.',
+    stack: ['React', 'TypeScript', 'Vite', 'Django', 'Python'],
+    href: 'https://truck-driver-one.vercel.app/',
+    image: { src: '/work/truck-route.webp', alt: 'Truck routing map with three Chicago to Denver routes scored by weather risk', width: 800, height: 500 },
+  },
   {
     title: 'Not Too Sweet',
     category: 'Shopify',
