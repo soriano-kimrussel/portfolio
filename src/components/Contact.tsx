@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { addressLines, phoneHref, projects, site } from '../config/site';
+import { addressOneLine, phoneHref, projects, site } from '../config/site';
 import Icon, { type IconName } from './Icon';
 
 const collage = projects.slice(0, 8).map((project) => project.image.src);
@@ -34,11 +34,13 @@ export default function Contact() {
         <div className="container-page">
           <div className="reveal mx-auto max-w-3xl rounded-3xl border border-white/10 bg-black/45 px-6 py-12 text-center backdrop-blur-md sm:px-12">
             <h2 id="contact-title" className="text-3xl sm:text-4xl">
-              Ready to Start Your Next <span className="text-accent">Project?</span>
+              Let's Build Something Great <span className="text-accent">Together</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-[1.05rem] text-[#d4d4d8]">
-              Tell me what you're building, when you need it and roughly what the budget is. I reply within one business
-              day, Philippine time ({site.timezone}).
+            <p className="mx-auto mt-4 max-w-2xl text-[1.05rem] text-[#d4d4d8]">
+              Available for full-time remote projects, with 40+ hours per week and flexibility to accommodate deadlines
+              and different time zones. Open to discussing your project, budget, and long-term goals. Whether you need a
+              new product built, an existing platform improved, or a reliable developer to bring your ideas to life, let's
+              connect and make it happen.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <a className="btn btn-light" href={`mailto:${site.email}`}>
@@ -62,8 +64,13 @@ export default function Contact() {
               Let's Work <span className="text-accent">Together</span>
             </h3>
             <p className="mt-3 text-muted">
-              Open to freelance projects, contracts and full-time roles. You deal with me directly, {site.name}.
+              Open to freelance projects, contract opportunities, and full-time roles with teams looking for a reliable,
+              experienced development partner. Work directly with me from the initial conversation through planning,
+              development, and delivery. I value clear communication, thoughtful collaboration, and building high-quality
+              solutions that create lasting value. Whether you have an idea to bring to life, an existing product to
+              improve, or a long-term project in mind, I'd be happy to connect and explore how we can work together.
             </p>
+            <p className="mt-4 font-semibold">{site.name}</p>
             <p className="mt-5 flex items-center gap-2 text-sm font-semibold text-emerald-300">
               <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399]" />
               Available now
@@ -77,21 +84,20 @@ export default function Contact() {
                   {site.email}
                 </a>
               </Detail>
+              {/* Full width so the URL fits on one line instead of breaking mid-word. */}
+              <Detail icon="github" label="GitHub" wide>
+                <a className="link" href={site.links.github} target="_blank" rel="noopener noreferrer">
+                  {site.links.github.replace('https://', '')}
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </Detail>
               <Detail icon="phone" label="Phone">
                 <a className="link" href={`tel:${phoneHref}`}>
                   {site.phone}
                 </a>
               </Detail>
-              <Detail icon="github" label="GitHub">
-                <a className="link break-all" href={site.links.github} target="_blank" rel="noopener noreferrer">
-                  {site.links.github.replace('https://', '')}
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>
-              </Detail>
-              <Detail icon="pin" label="Address" wide>
-                {addressLines[0]}
-                <br />
-                {addressLines[1]}
+              <Detail icon="pin" label="Address">
+                {addressOneLine}
               </Detail>
             </dl>
           </address>

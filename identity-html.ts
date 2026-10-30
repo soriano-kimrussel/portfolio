@@ -10,7 +10,7 @@
  */
 import type { Plugin } from 'vite';
 
-import { addressLines, isPlaceholder, phoneHref, services, site } from './src/config/site.ts';
+import { addressOneLine, isPlaceholder, phoneHref, services, site } from './src/config/site.ts';
 
 const esc = (value: string) =>
   value
@@ -29,7 +29,6 @@ const title = `${site.name} | Senior full-stack engineer, Angeles City`;
 function jsonLd() {
   const address = {
     '@type': 'PostalAddress',
-    streetAddress: site.address.street,
     addressLocality: site.address.city,
     addressRegion: site.address.region,
     addressCountry: site.address.countryCode,
@@ -111,7 +110,7 @@ function noscript() {
         <p>
           Email: <a href="mailto:${esc(site.email)}">${esc(site.email)}</a><br />
           Phone: <a href="tel:${esc(phoneHref)}">${esc(site.phone)}</a><br />
-          Address: ${addressLines.map(esc).join(', ')}
+          Address: ${esc(addressOneLine)}
         </p>
         <p>This site works best with JavaScript turned on, but everything above is all you need to reach me.</p>
       </div>

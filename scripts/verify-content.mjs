@@ -26,7 +26,7 @@ check(business, 'no ProfessionalService in JSON-LD');
 for (const [label, node] of [['Person', person], ['ProfessionalService', business]]) {
   if (!node) continue;
   for (const key of ['name', 'email', 'telephone', 'url']) check(node[key], `${label} has no ${key}`);
-  for (const key of ['streetAddress', 'addressLocality', 'addressRegion', 'addressCountry']) {
+  for (const key of ['addressLocality', 'addressRegion', 'addressCountry']) {
     check(node.address?.[key], `${label} address has no ${key}`);
   }
 }
@@ -35,7 +35,7 @@ const noscript = html.match(/<noscript>([\s\S]*?)<\/noscript>/)?.[1] ?? '';
 check(noscript, 'no <noscript> block');
 if (person) {
   const a = person.address;
-  const expected = [person.name, person.email, a.streetAddress, a.addressLocality, a.addressRegion];
+  const expected = [person.name, person.email, a.addressLocality, a.addressRegion];
   for (const value of expected) check(noscript.includes(value), `<noscript> is missing "${value}"`);
   check(noscript.includes(person.telephone) || noscript.includes('Phone:'), '<noscript> is missing the phone');
 }

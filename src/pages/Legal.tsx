@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
-import { addressLines, phoneHref, site } from '../config/site';
+import { addressOneLine, phoneHref, site } from '../config/site';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 function Row({ label, children }: { label: string; children: ReactNode }) {
@@ -30,11 +30,7 @@ export default function Legal() {
           <Row label="Legal name">{site.name}</Row>
           <Row label="Trading as">{site.businessName}</Row>
           <Row label="Business address">
-            <address className="not-italic">
-              {addressLines[0]}
-              <br />
-              {addressLines[1]}
-            </address>
+            <address className="not-italic">{addressOneLine}</address>
           </Row>
           <Row label="Email">
             <a className="link break-all" href={`mailto:${site.email}`}>

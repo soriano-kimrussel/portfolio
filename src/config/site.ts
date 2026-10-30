@@ -46,7 +46,6 @@ export const site = {
   phone: '+63 935 910 4715',
 
   address: {
-    street: 'R288 Talang St., Barangay Pandan',
     city: 'Angeles City',
     region: 'Pampanga',
     country: 'Philippines',
@@ -83,13 +82,8 @@ export const isPlaceholder = (value: string) => value.startsWith('[[FILL');
  */
 export const phoneHref = isPlaceholder(site.phone) ? site.phone : site.phone.replace(/[^\d+]/g, '');
 
-/** Street on one line, then city, region and country on the next. */
-export const addressLines = [
-  site.address.street,
-  `${site.address.city}, ${site.address.region}, ${site.address.country}`,
-] as const;
-
-export const addressOneLine = addressLines.join(', ');
+/** City, region and country on one line. */
+export const addressOneLine = `${site.address.city}, ${site.address.region}, ${site.address.country}`;
 
 export const nav = [
   { label: 'Home', id: 'top' },
