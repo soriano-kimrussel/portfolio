@@ -30,7 +30,12 @@ export default function Process() {
 
   return (
     <Section id="process">
-      <div className="container-page" onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
+      {/* Mouse only: a tap fires mouseenter with no matching mouseleave, which would pause auto-advance for good. */}
+      <div
+        className="container-page"
+        onPointerEnter={(event) => event.pointerType === 'mouse' && setHovering(true)}
+        onPointerLeave={(event) => event.pointerType === 'mouse' && setHovering(false)}
+      >
         <SectionHeading
           id="process"
           pill="Process"

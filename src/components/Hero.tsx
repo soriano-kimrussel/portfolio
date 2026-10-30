@@ -51,7 +51,8 @@ export default function Hero() {
           Meet {first} <span className="text-accent">{rest.join(' ')}</span>
         </h1>
 
-        <p className="mt-5 text-lg text-muted sm:text-xl">
+        {/* Two lines reserved on phones, where the longer roles wrap, so the page doesn't jump while typing. */}
+        <p className="mt-5 min-h-[2lh] text-lg text-muted sm:min-h-0 sm:text-xl">
           <span className="sr-only">{site.role}</span>
           <span aria-hidden="true">
             A Senior <span className="font-semibold text-text">{typed}</span>

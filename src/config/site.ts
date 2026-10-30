@@ -489,7 +489,7 @@ export const projects: Project[] = [
     body: 'A multi-tenant SaaS that automates the lead lifecycle: it captures and scores leads, drafts follow-ups with an LLM, routes each lead to its owner and reports on results. Runs at zero cost, with a pluggable AI layer.',
     stack: ['Next.js', 'Multi-tenant SaaS', 'LLM integration', 'Lead scoring'],
     href: 'https://flowpilot-topaz.vercel.app/',
-    image: { src: '/work/flowpilot.webp', alt: 'FlowPilot landing page beside a lead qualification pipeline with each step marked complete', width: 800, height: 500 },
+    image: { src: '/work/flowpilot.webp', alt: 'Dark FlowPilot landing page with a qualified leads chart connected to webhooks, email, CSV import and alerts', width: 800, height: 500 },
   },
   {
     title: 'Momentum',
@@ -497,7 +497,7 @@ export const projects: Project[] = [
     body: 'A zero-cost, local-first mobile app for personal growth, covering everything from daily habit tracking to monetization and admin, with no live backend services needed to run it.',
     stack: ['React Native', 'Expo', 'Local-first', 'Mobile app'],
     href: 'https://monentum.vercel.app',
-    image: { src: '/work/momentum.webp', alt: 'Momentum Today screen with a daily greeting, three habits with streaks and a mood check-in', width: 800, height: 500 },
+    image: { src: '/work/momentum.webp', alt: 'Momentum home screen with a greeting, today’s focus, habit, mindfulness and goal shortcuts, and three habits with streaks', width: 800, height: 500 },
   },
   {
     title: 'Vaultmarket',

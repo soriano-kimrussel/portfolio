@@ -67,7 +67,7 @@ export default function Work() {
           title="Featured"
           accent="Projects"
           align="left"
-          intro="Shopify stores, WordPress sites, data visualisation and web apps. The Shopify stores are live, so go and try them."
+          intro="Shopify stores, WordPress sites, data visualisation and web apps. The Shopify stores and the newer web apps are live, so go and try them."
         />
         <div className="reveal flex gap-3">
           <button type="button" className="icon-btn" onClick={() => scrollBy(-1)} disabled={page === 0} aria-controls="work-track">
@@ -102,7 +102,7 @@ export default function Work() {
           })}
         </div>
         <p className="sr-only" aria-live="polite">
-          Showing {shown.length} {filter === 'All' ? '' : filter} {shown.length === 1 ? 'project' : 'projects'}
+          {`Showing ${shown.length} ${filter === 'All' ? '' : `${filter} `}${shown.length === 1 ? 'project' : 'projects'}`}
         </p>
       </div>
 
@@ -144,7 +144,10 @@ export default function Work() {
                 </div>
 
                 <div className="flex flex-1 flex-col px-2.5 pt-4 pb-2">
-                  <p className="line-clamp-3 flex-1 text-sm text-muted">{project.body}</p>
+                  {/* flex-1 sits on the wrapper: on the clamped <p> itself it makes the box taller than three lines, so text shows past the ellipsis. */}
+                  <div className="flex-1">
+                    <p className="line-clamp-3 text-sm text-muted">{project.body}</p>
+                  </div>
                   <ul className="mt-4 flex flex-wrap gap-1.5" aria-label={`Stack used for ${project.title}`}>
                     {project.stack.slice(0, shownTags).map((item) => (
                       <li key={item} className="tag">
